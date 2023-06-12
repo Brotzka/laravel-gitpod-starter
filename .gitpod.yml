@@ -21,3 +21,7 @@ vscode:
     - ms-azuretools.vscode-docker
     - bmewburn.vscode-intelephense-client
     - zobo.php-intellisense
+    - github.copilot
+    - amiralizadeh9480.laravel-extra-intellisense
+    - xdebug.php-debug
+    - antfu.vite
