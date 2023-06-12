@@ -1,0 +1,23 @@
+# List the start up tasks. Learn more: https://www.gitpod.io/docs/configure/workspaces/tasks
+tasks:
+  - name: Init Laravel
+    init: |
+      cp .env.example .env
+      docker run --rm -u "$(id -u):$(id -g)" -v $(pwd):/opt -w /opt laravelsail/php82-composer:latest composer install --ignore-platform-reqs
+    command: | 
+      alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
+      sail up
+
+# List the ports to expose. Learn more: https://www.gitpod.io/docs/configure/workspaces/ports
+ports:
+  - name: The App
+    description: Port 80 for the application
+    port: 80
+    onOpen: open-preview
+
+# Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
+vscode:
+  extensions:
+    - ms-azuretools.vscode-docker
+    - bmewburn.vscode-intelephense-client
+    - zobo.php-intellisense
